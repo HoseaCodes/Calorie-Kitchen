@@ -38,14 +38,13 @@ function getrecepe(event){
                 url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
                 success: function(res) {
                     
-    let minuteString = mintueCoversation(res.results[0].readyInMinutes)
-    document.getElementById("output").innerHTML="<h5>"+res.results[0].title+"</h5><br><img src='"+res.baseUri+res.results[0].image+"' width='100%' /><br>Ready in "+minuteString
-    getsource(res.results[0].id)
-    getSelection(res.results[0].id)
+                    let minuteString = mintueCoversation(res.results[0].readyInMinutes)
+                    document.getElementById("output").innerHTML="<h5>"+res.results[0].title+"</h5><br><img src='"+res.baseUri+res.results[0].image+"' width='100%' /><br>Ready in "+minuteString
+                    getsource(res.results[0].id)
+                    getSelection(res.results[0].id)
 
-    // console.log(getrecepe);
-}
-});
+                }
+            });
 }
 
 
@@ -64,15 +63,14 @@ function getSelection(id){
                success: function(res) {
                    
                    foodData = res;
-                   console.log(res);
                    render();
-                   
+                   console.log(foodData);
+
                 }
-                
-                });
-            }
-            
-        })
+            });
+        }
+         
+    })
         
 }
     function render() {
@@ -81,15 +79,16 @@ function getSelection(id){
         // $amount.html(foodData.extendedIngredients[0].amount+" "+foodData.extendedIngredients[0].unit)
         // $image.html(foodData.image)
         const tr = document.createElement('tr');
-        $td.append(`<tr><td><button class="delete">X</button></td><td id="name">${foodData.extendedIngredients[0].name}</td>
-        <td id='orinial'>${foodData.extendedIngredients[0].originalString}</td>
-        <td id='amount'>${foodData.extendedIngredients[0].amount+" "+foodData.extendedIngredients[0].unit}</td>
-        <td id="image">${foodData.image}</td></tr>`);
+        $td.append(`<tr>
+        <td><button class="btn-floating btn-small waves-effect waves-light" id="delete">X</button></td><td id="name">${foodData.title}</td>
+        <td id='orinial'>${foodData.summary}</td>
+        <td id='amount'>${foodData.diets}</td>
+        <td id="instructions">${foodData.instructions}</td></tr>`);
         
         $('.delete').on('click', function () {
-                    console.log(this);
-                    $(this).parents('tr').remove();
-    });
+            console.log(this);
+            $(this).parents('tr').remove();
+        });
     }
     
     
@@ -100,7 +99,7 @@ function getJokes(){
     success: function(res){
         document.getElementById("foodJoke").innerHTML="<div id='generatedJoke'>"+res.text+"</div>"
         console.log(res);
-    }
+        }
     })
 }
 // Had to comment this out because it will immedately start the functions
@@ -129,14 +128,13 @@ function getsource(id){
     event.preventDefault();
 
     $.ajax({
-    url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=${config.RECIPE_API_KEY}`,
-    success: function(res) {
+        url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=${config.RECIPE_API_KEY}`,
+        success: function(res) {
     
-    document.getElementById("sourceLink").innerHTML=res.sourceUrl
-    document.getElementById("sourceLink").href=res.sourceUrl
-
-    }
-    });
+            document.getElementById("sourceLink").innerHTML=res.sourceUrl
+            document.getElementById("sourceLink").href=res.sourceUrl
+            }
+        });
     }
 
 //Converts the mintues to hours and minutes.
@@ -157,9 +155,6 @@ function getsource(id){
         event.preventDefault();
       });
 
-     // document.ready(function(){
-    //     $('#select').change(function(){
-    //     document.getElementById("diet").innerHTML="<li>"+res.extendedIngredients[0].name+"</li><br><li>"+res.extendedIngredients[0].originalName+"</li><br><li>"+res.extendedIngredients[0].amount+" "+res.extendedIngredients[0].unit+"</li><br><li>"+res.measures[0].amount+" "+res.measures[0].unitLong+"</li><br><img src='"+res.measures[0].extendedIngredients.image+"' width='400' /><br>"
-    //   });
+     
       
    

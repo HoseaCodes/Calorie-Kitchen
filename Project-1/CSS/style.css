@@ -141,6 +141,11 @@ header video {
 
 }
 
+#orginial {
+    width: 50%;   
+    
+}
+
 #joke {
     align-self: flex-start;
     text-align: center;
@@ -200,4 +205,10 @@ label {
 
 .page-footer {
     background-color: rgb(0, 128, 62);
+}
+
+#delete{
+    background-color: rgb(0, 128, 62);
+    color: rgb(254, 202, 58);
+
 }
