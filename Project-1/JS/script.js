@@ -6,11 +6,11 @@ const $videoInput = $("input[id='videoInput']")
 const $select = $("select[id='select']")
 
 let $td = $(".table")
-let $name = $('#name')
-let $orginial = $('#orginial')
-let $amount = $('#amount')
-let $unit = $('#unit')
-let $image = $('#lost')
+// let $name = $('#name')
+// let $orginial = $('#orginial')
+// let $amount = $('#amount')
+// let $unit = $('#unit')
+// let $image = $('#lost')
 
 $select.change(function() {
     $input.val(''); 
@@ -38,8 +38,8 @@ function getrecepe(event){
                 url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
                 success: function(res) {
                     
-                    let minuteString = mintueCoversation(res.results[0].readyInMinutes)
-                    document.getElementById("output").innerHTML="<h5>"+res.results[0].title+"</h5><br><img src='"+res.baseUri+res.results[0].image+"' width='100%' /><br>Ready in "+minuteString
+    let minuteString = mintueCoversation(res.results[0].readyInMinutes)
+    document.getElementById("output").innerHTML="<h5>"+res.results[0].title+"</h5><br><img src='"+res.baseUri+res.results[0].image+"' width='100%' /><br>Ready in "+minuteString
     getsource(res.results[0].id)
     getSelection(res.results[0].id)
 
@@ -53,35 +53,46 @@ function getSelection(id){
     
     foodSelection = $select.val();
    
-    
-        $.ajax({
-        url:`https://api.spoonacular.com/recipes/723984/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
-        success: function(res) {
-        
-        foodData = res;
-        render();
-        const td = document.createElement('td');
-        $td.append(`<td><button class="delete"></button>${render}</td>`);
-   
-        }
-        });
-        $('td').on('click', 'button', function () {
-            console.log(this);
-            $(this).closest('td').remove();
+    $.ajax({
+        url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
+        success: function(res){
+
+           let recipeId = res.results[0].id;
+
+           $.ajax({
+               url:`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
+               success: function(res) {
+                   
+                   foodData = res;
+                   console.log(res);
+                   render();
+                   
+                }
+                
+                });
+            }
+            
         })
-        }
- 
-
-    function render () {
-        $name.html(foodData.extendedIngredients[0].name)
-        $orginial.html(foodData.extendedIngredients[0].originalString)
-        $amount.html(foodData.extendedIngredients[0].amount+" "+foodData.extendedIngredients[0].unit)
-        $image.html(foodData.image)
-        // document.getElementById('image').src=foodData.image
-        // $image.html(foodData.image)
-
-    }
         
+}
+    function render() {
+        // $name.html(foodData.extendedIngredients[0].name)
+        // $orginial.html(foodData.extendedIngredients[0].originalString)
+        // $amount.html(foodData.extendedIngredients[0].amount+" "+foodData.extendedIngredients[0].unit)
+        // $image.html(foodData.image)
+        const tr = document.createElement('tr');
+        $td.append(`<tr><td><button class="delete">X</button></td><td id="name">${foodData.extendedIngredients[0].name}</td>
+        <td id='orinial'>${foodData.extendedIngredients[0].originalString}</td>
+        <td id='amount'>${foodData.extendedIngredients[0].amount+" "+foodData.extendedIngredients[0].unit}</td>
+        <td id="image">${foodData.image}</td></tr>`);
+        
+        $('.delete').on('click', function () {
+                    console.log(this);
+                    $(this).parents('tr').remove();
+    });
+    }
+    
+    
 
 function getJokes(){
     $.ajax({
