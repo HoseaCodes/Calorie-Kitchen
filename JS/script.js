@@ -6,11 +6,6 @@ const $videoInput = $("input[id='videoInput']")
 const $select = $("select[id='select']")
 
 let $td = $(".table")
-// let $name = $('#name')
-// let $orginial = $('#orginial')
-// let $amount = $('#amount')
-// let $unit = $('#unit')
-// let $image = $('#lost')
 
 $select.change(function() {
     $input.val(''); 
@@ -77,10 +72,6 @@ function getSelection(id){
         
 }
     function render() {
-        // $name.html(foodData.extendedIngredients[0].name)
-        // $orginial.html(foodData.extendedIngredients[0].originalString)
-        // $amount.html(foodData.extendedIngredients[0].amount+" "+foodData.extendedIngredients[0].unit)
-        // $image.html(foodData.image)
         const tr = document.createElement('tr');
         $td.append(`<tr>
         <td><button class="btn-floating btn-small waves-effect waves-light" id="delete">X</button></td><td id="name">${foodData.title}</td>
@@ -106,10 +97,6 @@ function getJokes(){
         }
     })
 }
-// Had to comment this out because it will immedately start the functions
-// getJokes();
-// console.log(getJokes);
-
 
 function getVideos() {
     
