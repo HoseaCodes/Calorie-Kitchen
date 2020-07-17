@@ -35,7 +35,8 @@ function getrecepe(event){
             // console.log(searchSelection);
             
             $.ajax({
-                url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
+                url: `https://project1-629.herokuapp.com/dominique?search=${userInput}`,
+                //url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
                 success: function(res) {
                     
                     let minuteString = mintueCoversation(res.results[0].readyInMinutes)
