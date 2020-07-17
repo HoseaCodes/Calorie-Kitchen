@@ -56,7 +56,7 @@ function getSelection(id){
            let recipeId = res.results[0].id;
 
            $.ajax({
-                url:`https://project1-629.herokuapp.com/dominique/selection/specific?search=${foodSelection}&id=${recipeId}`,   
+                url:`https://project1-629.herokuapp.com/dominique/selection/specific?search=${recipeId}&id=${foodSelection}`,   
             //url:`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
                success: function(res) {
                    
