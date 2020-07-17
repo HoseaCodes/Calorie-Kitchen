@@ -35,7 +35,7 @@ function getrecepe(event){
             // console.log(searchSelection);
             
             $.ajax({
-                url: `https://project1-629.herokuapp.com/dominique?search=${userInput}`,
+                url: `https://project1-629.herokuapp.com/dominique/recipes?search=${userInput}`,
                 //url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
                 success: function(res) {
                     
@@ -54,13 +54,15 @@ function getSelection(id){
     foodSelection = $select.val();
    
     $.ajax({
-        url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
+        url: `https://project1-629.herokuapp.com/dominique/selection?search=${foodSelection}`,
+        //url:`https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
         success: function(res){
 
            let recipeId = res.results[0].id;
 
            $.ajax({
-               url:`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
+                url:`https://project1-629.herokuapp.com//dominique/selection/specific&search=${foodSelection}&id=${recipeId}`,   
+            //url:`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
                success: function(res) {
                    
                    foodData = res;
@@ -96,7 +98,8 @@ function getSelection(id){
 
 function getJokes(){
     $.ajax({
-        url: `https://api.spoonacular.com/food/jokes/random?apiKey=${config.RECIPE_API_KEY}`,
+        url: `https://project1-629.herokuapp.com/dominique/jokes`,
+        //url: `https://api.spoonacular.com/food/jokes/random?apiKey=${config.RECIPE_API_KEY}`,
     success: function(res){
         document.getElementById("foodJoke").innerHTML="<div id='generatedJoke'>"+res.text+"</div>"
         console.log(res);
@@ -112,7 +115,8 @@ function getVideos() {
     
     videoSearch = $videoInput.val();
     $.ajax({
-        url: `https://api.spoonacular.com/food/videos/search?apiKey=${config.RECIPE_API_KEY}&query=${videoSearch}`,
+        url: `https://project1-629.herokuapp.com/dominique/videos?search=${videoSearch}`,
+        //url: `https://api.spoonacular.com/food/videos/search?apiKey=${config.RECIPE_API_KEY}&query=${videoSearch}`,
         success: function(res){
             document.getElementById("video").src=`https://www.youtube.com/embed/`+res.videos[0].youTubeId            
 
@@ -129,7 +133,8 @@ function getsource(id){
     event.preventDefault();
 
     $.ajax({
-        url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=${config.RECIPE_API_KEY}`,
+        url: `https://project1-629.herokuapp.com/dominique/source?search=${id}`,
+        //url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=${config.RECIPE_API_KEY}`,
         success: function(res) {
     
             document.getElementById("sourceLink").innerHTML=res.sourceUrl
