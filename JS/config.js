@@ -1,5 +1,5 @@
 const config = {
-    RECIPE_API_KEY: "e353ffe7455045d598ec757186cf4e35"
+    RECIPE_API_KEY: ""
 }
 
 //"https://api.spoonacular.com/mealplanner/generate?timeFrame=<string>&targetCalories=<number>&diet=<string>&exclude=<string>"
