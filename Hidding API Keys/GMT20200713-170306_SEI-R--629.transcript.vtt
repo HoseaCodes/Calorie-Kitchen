@@ -1,0 +1,394 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.669
+melissa: It's really a pain to set everything up.
+
+2
+00:00:26.070 --> 00:00:28.110
+melissa: No other way around. Sorry, guys.
+
+3
+00:00:39.270 --> 00:00:42.660
+melissa: Make sure it's all in here, great, cool. Um,
+
+4
+00:00:45.270 --> 00:00:53.910
+melissa: So we're going to start going opens up so you can see I have my weather app I have JavaScript going to open it up and I have in here.
+
+5
+00:00:55.020 --> 00:01:00.690
+melissa: Because I was playing around with this on my own. I have two API's and to
+
+6
+00:01:02.070 --> 00:01:04.920
+melissa: API keys, um,
+
+7
+00:01:07.050 --> 00:01:13.770
+melissa: So those are things I don't want on GitHub. Right. So how do we get there. The first thing first, that in your
+
+8
+00:01:14.340 --> 00:01:29.010
+melissa: I'm going to use the terminal for this guy's you need to make a we're going to make some new files inside of our project. So that's first. The first thing you're going to want is to make a file called confit doc as
+
+9
+00:01:30.060 --> 00:01:34.710
+melissa: And then the second file, you're going to want to make it something called a dot get ignored.
+
+10
+00:01:38.520 --> 00:01:46.080
+melissa: Yet Ellis pack a great looks like both of those have been added to my. Oh, right. I'm in
+
+11
+00:01:48.240 --> 00:01:52.440
+melissa: I'm just gonna fix this in here I'm weather app.
+
+12
+00:01:53.580 --> 00:02:00.780
+melissa: Both the gig noise finding their config, you're gonna want to move into your JavaScript file because it is also a JavaScript file.
+
+13
+00:02:01.740 --> 00:02:13.200
+melissa: So you should now have your script jazz right in your config jazz cool. Um, what is the next step that we have to do if we want to use a JavaScript file in our project.
+
+14
+00:02:16.380 --> 00:02:17.790
+austin: Make a pathway. Enter index.
+
+15
+00:02:18.210 --> 00:02:18.840
+Yeah.
+
+16
+00:02:20.220 --> 00:02:28.050
+melissa: Um, cool. So where this is going to live here, basically, is that, first you're going to, you're going to want to include it.
+
+17
+00:02:29.670 --> 00:02:39.600
+melissa: Before your main JS file because your main JS file is going to use information from this config.
+
+18
+00:02:40.110 --> 00:02:52.650
+melissa: Just like our library does right we put jQuery before script because script uses things from jQuery, we're going to have a config jazz before script because script is going to use things from config. Does that make sense so far.
+
+19
+00:02:54.120 --> 00:02:58.110
+melissa: Cool. Alright, so let's go back. I'm going to
+
+20
+00:02:59.310 --> 00:03:00.510
+melissa: Full screen. This
+
+21
+00:03:01.710 --> 00:03:13.140
+melissa: Um, so we're gonna hit Control save. That's all we have to do with our index dot html going to open up script and I'm going to open up config over here, just so we can see them side by side.
+
+22
+00:03:14.370 --> 00:03:23.790
+melissa: Cool. So all we're going to make in this config file is a constant all content set that equal to an object.
+
+23
+00:03:25.230 --> 00:03:27.660
+melissa: This is the only thing that's going to live in this file.
+
+24
+00:03:29.760 --> 00:03:41.580
+melissa: Now we need some key value pairs in here. So let's say that the first one. Um, so this is you're going to see me use all caps for this, guys. It's kind of just like a naming convention thing. These are
+
+25
+00:03:42.360 --> 00:03:53.490
+melissa: Values that aren't going to change that I'm using from another file, so it's good practice to just give them an all caps name. Um, so I'm going to call this. Let's see.
+
+26
+00:03:54.840 --> 00:04:00.240
+melissa: Whether API, he, he
+
+27
+00:04:02.250 --> 00:04:03.030
+melissa: Will do this way.
+
+28
+00:04:04.920 --> 00:04:05.190
+And
+
+29
+00:04:06.570 --> 00:04:10.950
+melissa: Cool. And then I'm going to go back into here scroll
+
+30
+00:04:12.570 --> 00:04:14.130
+melissa: Excuse you school
+
+31
+00:04:15.450 --> 00:04:20.040
+melissa: And I'm going to copy my API key. I'm going to take the whole thing out.
+
+32
+00:04:21.360 --> 00:04:22.650
+melissa: And put in a string in here.
+
+33
+00:04:25.170 --> 00:04:32.460
+melissa: Everyone following me so far with this cool really easy, right. We're just making an object. So I'm going to do the same thing with my other API key.
+
+34
+00:04:49.980 --> 00:04:56.730
+melissa: And I have both of them here. And that's it. Now I'm places holding our APIs at separate from our main script.
+
+35
+00:04:58.110 --> 00:05:07.500
+melissa: Great. So then in here. The next thing we need is we need access to that to the config right so let's just try to
+
+36
+00:05:09.960 --> 00:05:11.220
+melissa: Create a new variable.
+
+37
+00:05:13.650 --> 00:05:14.970
+melissa: Whoops, I'm still in caps.
+
+38
+00:05:16.290 --> 00:05:20.610
+melissa: I'm going to call this variable config. And I'm going to set it equal to
+
+39
+00:05:25.080 --> 00:05:28.740
+melissa: A. I think I can do set this equal to conflict now.
+
+40
+00:05:31.050 --> 00:05:33.720
+melissa: Let's just console log that so I'm not crazy.
+
+41
+00:06:04.860 --> 00:06:09.720
+melissa: Did not like that. Hold on guys, I look back at these notes. I was copying from this morning.
+
+42
+00:06:14.220 --> 00:06:18.420
+Nathan Childress: I mean, do you want to test it by just renaming the local config to something else.
+
+43
+00:06:19.980 --> 00:06:21.930
+melissa: I'm actually wondering if I can just
+
+44
+00:06:24.870 --> 00:06:26.190
+melissa: So not long config.
+
+45
+00:06:26.670 --> 00:06:27.150
+Here we go.
+
+46
+00:06:31.500 --> 00:06:49.470
+melissa: Yeah. OK, cool. So now you see, um, because it's in our HTML, um, that we just have access to this config object, right guys on you have both those are both my API keys. Great. So then, all we're going to do in here is we're going to, let's set this equal to constant my configs
+
+47
+00:06:51.360 --> 00:06:55.500
+melissa: An equal a tour. Actually, we don't even have to do that. We're not going to bother with the variable.
+
+48
+00:06:55.890 --> 00:07:11.730
+melissa: So we know we have access to config. So the next thing we're going to do is we're going to go to where we had those keys before. And since I'm already using a string interpolation. This is easy. And we're just going to say config dot whether API key.
+
+49
+00:07:13.290 --> 00:07:15.120
+melissa: And then I'm going to go in here and
+
+50
+00:07:17.010 --> 00:07:21.660
+melissa: They got, um, what I call it Google Maps, Google Maps API key.
+
+51
+00:07:22.890 --> 00:07:28.230
+melissa: Great. So let's see if that if I if my WEATHER APP still works.
+
+52
+00:07:34.830 --> 00:07:37.950
+melissa: Yeah, I still have only known look at the CSS. Don't worry about that.
+
+53
+00:07:40.050 --> 00:07:47.040
+melissa: I still have all my weather information. Awesome. Cool. So now why did I move this out into its own separate um
+
+54
+00:07:48.090 --> 00:08:02.730
+melissa: File for development. This is a our next step. This is why we created what's called the get ignore. So getting more and you have to name it like this with the.in front docket ignore is a special file that GitHub understands
+
+55
+00:08:03.060 --> 00:08:20.790
+melissa: That you put into your system and say, hey, whenever I commit code. I want you to ignore any file or folder that is inside of this file. Um, so in this case what we wanted to ignore is
+
+56
+00:08:22.350 --> 00:08:22.650
+melissa: Yeah.
+
+57
+00:08:24.300 --> 00:08:31.680
+melissa: weather app you're going to just put the relative pathway to your thing JS.
+
+58
+00:08:34.440 --> 00:08:35.910
+melissa: And you get to control save
+
+59
+00:08:37.500 --> 00:08:41.370
+melissa: And now if I go into my terminal and I do it get status.
+
+60
+00:08:43.350 --> 00:08:46.380
+melissa: cd into whether have to show this better.
+
+61
+00:08:48.090 --> 00:08:49.050
+melissa: Status.
+
+62
+00:08:50.160 --> 00:09:01.560
+melissa: Look, the only thing that says it's been trapped. Is that get ignore right, you can't see that. Um, I don't see my config file anywhere so I do get add a
+
+63
+00:09:07.110 --> 00:09:10.170
+melissa: good head start.
+
+64
+00:09:17.730 --> 00:09:25.380
+melissa: Well, so the only files that my repository say that I've created is my get ignored my style my index and my script.
+
+65
+00:09:26.760 --> 00:09:29.190
+melissa: Does anyone have any questions at this point.
+
+66
+00:09:35.580 --> 00:09:36.840
+diegoburgos: I don't have question but
+
+67
+00:09:38.490 --> 00:09:43.020
+diegoburgos: Can you base, what you put in the HTML in there.
+
+68
+00:09:45.270 --> 00:09:49.920
+melissa: Oh, I put in the HTML Diego is is that script tag.
+
+69
+00:09:52.500 --> 00:09:57.810
+melissa: That is the same as your script JS, it's just going to be your for your config, and it has to go before the script.
+
+70
+00:09:57.870 --> 00:09:58.860
+melissa: Jazz. That's it.
+
+71
+00:10:10.050 --> 00:10:16.710
+melissa: That's it. That's the whole the whole session, I will post the guide guys that I wrote up to follow for this code along
+
+72
+00:10:17.820 --> 00:10:19.290
+melissa: So now you can see that
+
+73
+00:10:21.690 --> 00:10:25.170
+melissa: Um, but yeah. So now if I do get
+
+74
+00:10:26.460 --> 00:10:26.910
+melissa: Commit
+
+75
+00:10:29.910 --> 00:10:32.790
+melissa: Created awesome weather app.
+
+76
+00:10:34.800 --> 00:10:40.080
+melissa: Don't put things in your messages and messes them up. I'm
+
+77
+00:10:44.490 --> 00:10:45.540
+melissa: Origin.
+
+78
+00:10:54.060 --> 00:10:55.290
+melissa: Special password.
+
+79
+00:10:57.150 --> 00:10:59.010
+melissa: Cool. So let's go look at my GitHub.
+
+80
+00:11:03.420 --> 00:11:04.320
+melissa: Refresh.
+
+81
+00:11:05.850 --> 00:11:09.420
+melissa: And we go into WEATHER APP AND WE GO INTO JS and there's no config file.
+
+82
+00:11:10.650 --> 00:11:11.790
+melissa: And you go into script.
+
+83
+00:11:13.410 --> 00:11:24.540
+melissa: And you can see that the content of the value that we made is still here. But there's nothing for hackers to read nothing for them to scrape that's actually useful.
+
+84
+00:11:26.460 --> 00:11:35.400
+melissa: And that's it. And that's how you hide your API keys for your projects for development. Oh, when we get to deployment. I'll be going over how we add a
+
+85
+00:11:35.880 --> 00:11:50.430
+melissa: Basically, they call them like environmental variables, but I have to look into the best way and easiest way for you guys to do that for a client side project. I haven't done that before. I've always had my environmental variables in my back end.
+
+86
+00:11:52.230 --> 00:11:57.450
+melissa: Which, you know, it's just new so I'm going to learn something. This week guys. Very excited
+
+87
+00:11:58.710 --> 00:12:03.120
+melissa: Great, so I'll post the guide, but that's it. That's the whole code alone.
+
+88
+00:12:05.310 --> 00:12:07.140
+chas | he/him: Sorry if you touched on this. I
+
+89
+00:12:08.220 --> 00:12:12.630
+chas | he/him: might have missed it, but we push to getting more to our remote repo.
+
+90
+00:12:12.780 --> 00:12:22.230
+melissa: Yes, yes. So you. Yeah. So if you go back here you will see I have my docket ignore the.is very important has to be docket ignore
+
+91
+00:12:22.620 --> 00:12:35.250
+melissa: And you'll see that it says what to ignore. So like, you know, someone will look into this and see like I see they are hiding this information, but they still can't see what information I'm hiding just that I didn't add it
+
+92
+00:12:41.100 --> 00:12:44.790
+melissa: Great. I'm going to stop sharing my screen now. I'm a big desktop.
+
+93
+00:12:46.920 --> 00:12:48.510
+melissa: I can find the button. There it is.
+
+94
+00:12:50.670 --> 00:12:56.340
+melissa: Cool. Yeah. And I'll post this into the Slack channel probably into the debugging thread.
+
+95
+00:12:57.840 --> 00:13:02.520
+melissa: So everyone feel good. Ready to hide some keys from your
+
+96
+00:13:03.150 --> 00:13:04.380
+melissa: From the scrapers
+
+97
+00:13:06.960 --> 00:13:07.470
+melissa: Awesome.
+
+98
+00:13:08.700 --> 00:13:14.550
+melissa: Great. You guys can go back to your breakout rooms to keep working. If you want if anyone has questions, let me know.
+
