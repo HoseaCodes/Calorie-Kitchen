@@ -1,11 +1,9 @@
 # Carlorie Kitchen
 
-A web app for gathering and displaying recipes, and food jokes.
+A web app for gathering and displaying recipes, videos and food jokes. This applications is meant to be a one stop shop to find better eating alternatives. There is an AJAX call to the Spoonacular API to fetch all of the food data. 
 
 ## Screenshots
 ____________________
-
-Calorie Kitchen
 
 Data Structre
 
@@ -15,7 +13,7 @@ List Data Example:
 
 ![Imgur](https://i.imgur.com/VyVkkNk.png)
 
-## Wire Frame
+## WireFrame
 ______________________________________________________________________________________
 
 ![Screen Shot 2020-07-11 at 1.32.21 AM](https://i.imgur.com/tMbw8J8.png)
@@ -40,6 +38,8 @@ AAU (As u User)
 ## Technologies
 ____________________
 
+This application was developed with a a combination of vanilla JavaScript and jQuery. Styling done with Materialize and CSS.
+
 - HTML
 - CSS
 - Materialize
@@ -49,7 +49,7 @@ ____________________
 ## Getting Started
 ____________________
 
-[Click here](https://hosead6168.github.io/Project-1/) to open app in browser.
+[Click here](https://hoseacodes.github.io/Calorie-Kitchen/) to open app in browser.
 ____________________
 
 ## Future Enhancements
