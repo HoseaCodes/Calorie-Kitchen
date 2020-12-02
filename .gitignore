@@ -1,2 +1,4 @@
 JS/config.js
 .env
+.DS_Store
+.vscode
