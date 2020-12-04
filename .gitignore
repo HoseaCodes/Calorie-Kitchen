@@ -2,3 +2,5 @@ JS/config.js
 .env
 .DS_Store
 .vscode
+node_modules/
+public/JS/config.js

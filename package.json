@@ -1,0 +1,27 @@
+{
+  "name": "calorie-kitchen",
+  "version": "1.0.0",
+  "description": "A web app for gathering and displaying recipes, videos and food jokes. This applications is meant to be a one stop shop to find better eating alternatives. There is an AJAX call to the Spoonacular API to fetch all of the food data.",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoseaCodes/Calorie-Kitchen.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Dominique Hosea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoseaCodes/Calorie-Kitchen/issues"
+  },
+  "homepage": "https://github.com/HoseaCodes/Calorie-Kitchen#readme"
+}
