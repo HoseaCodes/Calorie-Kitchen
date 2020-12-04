@@ -1,5 +1,6 @@
 let foodData, foodSelection;
-
+console.log(process.env.RECIPE_API_KEY);
+console.log(config.RECIPE_API_KEY);
 const $readyInMinutes = $('.readyInMinutes')
 const $input = $("input[id='search']")
 const $videoInput = $("input[id='videoInput']")
