@@ -32,7 +32,7 @@ function getrecepe(event) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/recipes?search=${userInput}`,
-        url: `https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
+        url: `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API_KEY}&number=1&query=${userInput}`,
         success: function (res) {
 
             let minuteString = mintueCoversation(res.results[0].readyInMinutes)
@@ -51,14 +51,14 @@ function getSelection(id) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/selection?search=${foodSelection}`,
-        url: `https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
+        url: `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API_KEY}&number=1&query=${foodSelection}`,
         success: function (res) {
 
             let recipeId = res.results[0].id;
 
             $.ajax({
                 // url:`https://project1-629.herokuapp.com/dominique/selection/specific?search=${foodSelection}&id=${recipeId}`,   
-                url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
+                url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${RECIPE_API_KEY}&query=${foodSelection}`,
                 success: function (res) {
 
                     foodData = res;
