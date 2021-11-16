@@ -1,221 +1,224 @@
-
+* {
+  margin: 0;
+  padding: 0;
+}
 
 div.card-action {
-    font-size: 8px;
+  font-size: 8px;
 }
- 
+
 nav {
-    color: black;
-    background-color: rgb(0, 128, 62);
+  color: black;
+  background-color: rgb(0, 128, 62);
 }
 
 #header {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-#logo{
-    padding-top: 5px;
+#logo {
+  padding-top: 5px;
 }
 header {
-    position: relative;
-    background-color: black;
-    height: 75vh;
-    min-height: 25rem;
-    width: 100%;
-    overflow: hidden;
-  }
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
 
 header video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  } 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
 
-  #overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header video {
+    display: none;
   }
-
-  @media (pointer: coarse) and (hover: none) {
-    
-    header video {
-      display: none;
-    }
-  }
-
+}
 
 #introTitle {
-    text-align: center ;
-    font-family: 'Abril Fatface', cursive;
-    -webkit-text-stroke: 2px rgb(168, 168, 168);
-    color: rgb(0, 128, 62);
-    text-shadow: 
-    3px 3px 0 #000,
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  -webkit-text-stroke: 2px rgb(168, 168, 168);
+  color: rgb(0, 128, 62);
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #footerTitle {
-    text-align: center ;
-    font-family: 'Abril Fatface', cursive;
-    -webkit-text-stroke: 2px rgb(168, 168, 168);
-    color: white;
-    text-shadow: 
-    3px 3px 0 #000,
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  -webkit-text-stroke: 2px rgb(168, 168, 168);
+  color: white;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
 }
-
 
 .btn {
-
-    background-color: rgb(0, 128, 62);
+  background-color: rgb(0, 128, 62);
 }
 
-#container-1{
-    display: flex;
-    padding: 40px;
-    margin: 20px;
+#container-1 {
+  display: flex;
+  padding: 40px;
+  margin: 20px;
 }
 #search-box {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    /* border: 1px #ccc solid; */
-    /* padding: 10px; */
-    width: 100%;
-    margin-right: 20px;
-    border: 1px #ccc solid;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* border: 1px #ccc solid; */
+  /* padding: 10px; */
+  width: 100%;
+  margin-right: 20px;
+  border: 1px #ccc solid;
+  justify-content: center;
 }
 #btn-1 {
-    width: 10%;
-    align-self: center;
+  width: 10%;
+  align-self: center;
 }
 
 #sourceLink {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 #dropbox {
-    width: 65%;
-    padding: 10px;
-    text-align: center;
-    
+  width: 65%;
+  padding: 10px;
+  text-align: center;
 }
 
-
-#container-2{
-    display: flex;
-    flex-direction: row;
-    border: 1px #ccc solid;
-    padding: 60px;
-    justify-content: center;
-
+#container-2 {
+  display: flex;
+  flex-direction: row;
+  border: 1px #ccc solid;
+  padding: 60px;
+  justify-content: center;
 }
 
 #highlight {
-    justify-content: center;
+  justify-content: center;
 }
-.th{
+.th {
 }
 
-#container-3{
-    display: flex;
-    flex-direction: row;
-    border: 1px #ccc solid;
-    padding: 60px;
-
+#container-3 {
+  display: flex;
+  flex-direction: row;
+  border: 1px #ccc solid;
+  padding: 60px;
 }
 
 #orginial {
-    width: 50%;   
-    
+  width: 50%;
 }
 
 #joke {
-    align-self: flex-start;
-    text-align: center;
-    /* border: 1px #ccc solid; */
-    padding: 10px;
-    width: 35%;
-    margin-right: 20px;
-    border: 1px #ccc solid;
+  align-self: flex-start;
+  text-align: center;
+  /* border: 1px #ccc solid; */
+  padding: 10px;
+  width: 35%;
+  margin-right: 20px;
+  border: 1px #ccc solid;
 }
 
 #jokeText {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 h5 {
-    font-size: 30px;;
+  font-size: 30px;
 }
 
 #generatedJoke {
-    border: 5px rgb(254, 202, 58) solid;
+  border: 5px rgb(254, 202, 58) solid;
 }
 
 #together {
-    flex-direction: row;
-    align-self: center;
+  flex-direction: row;
+  align-self: center;
 }
 
 #youtube {
-    width: 50%;
-    border: 1px #ccc solid;
-    padding: 10px;
-    text-align: center;
-    
+  width: 50%;
+  border: 1px #ccc solid;
+  padding: 10px;
+  text-align: center;
 }
 
 #video {
-    padding: 10px;
+  padding: 10px;
 }
 
-h3,h4,h5 {
-    font-family: 'Abril Fatface', cursive;
-    color: rgb(0, 128, 62);
+h3,
+h4,
+h5 {
+  font-family: "Abril Fatface", cursive;
+  color: rgb(0, 128, 62);
 }
 
 label {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .brower-deault {
-    text-align: center;
+  text-align: center;
 }
 
 #center-top {
-    border: 1px #ccc solid;
-    padding: 10px;
+  border: 1px #ccc solid;
+  padding: 10px;
 }
 
 .page-footer {
-    background-color: rgb(0, 128, 62);
+  background-color: rgb(0, 128, 62);
 }
 
-#delete{
-    background-color: rgb(0, 128, 62);
-    color: rgb(254, 202, 58);
+#delete {
+  background-color: rgb(0, 128, 62);
+  color: rgb(254, 202, 58);
+}
 
+#popUpBox {
+  width: 500px;
+  overflow: hidden;
+  background: rgb(0, 128, 62);
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  position: absolute;
+  top: 500%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 10px;
+  text-align: center;
+  display: none;
+  color: white;
 }
