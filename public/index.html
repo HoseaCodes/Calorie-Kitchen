@@ -41,10 +41,31 @@
         <li><a href="#conatiner-1">Home</a></li>
         <li><a href="#dropbox">Recipes</a></li>
         <li><a href="#youtube">Videos</a></li>
+        <li>
+        <div class="outside-modal-container">
+          <a onclick="popupModal()" >Generate Meal Plan</a>
+        </div>
+        <div id="popUpOverlay"></div>
+        <div id="popUpBox">
+          <div id="box">
+            <i class="fas fa-check-circle fa-5x"></i>        
+            <h1 id="calorie-questions">How many calories would you like?</h1>
+            <input type="text" id="calorie-request" placeholder="The Average Daily Calroies is 2000">
+            <select id="calorie-plan">
+              <option value="" disabled selected>Which do you prefer</option>
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+            </select>
+            <button onclick="generateMealPlan()" id="modal-transition">Next</button>
+            <div id="closeModal"></div>
+          </div>
+        </div>
+        </li>
       </ul>
     </div>
   </nav>
 
+  </div>
   <div id="header">
     <!-- <h1 id="introTitle">Welcome to the Calorie Kitchen</h1>  -->
     <a id="logo" href="https://imgur.com/sRAzBlH"><img src="https://i.imgur.com/sRAzBlH.png?1"
@@ -69,7 +90,12 @@
       </button>
 
       <div class="row">
-        <div class="col s12 m7">
+        <div class="col s6 m7">
+          <div class="calories">
+            <div id="calorie-output"></div>
+          </div>
+        </div>
+        <div class="col s6 m7">
           <div class="card">
             <div class="card-image">
               <div id="output"></div>
@@ -118,7 +144,6 @@
 
 
   <div id="container-3">
-
     <div id='joke'>
       <div id="jokeText">
         <h5>You Are Going To Eat This Up!</h5>
@@ -140,8 +165,6 @@
       </div>
     </div>
 
-
-
     <div id="youtube">
       <div id="together">
         <input type="text" id="videoInput" placeholder="Learn How To Make A Meal">
@@ -154,8 +177,6 @@
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-  </div>
-  </div>
   </div>
 
   <footer class="page-footer">
