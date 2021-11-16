@@ -1,12 +1,13 @@
 let foodData, foodSelection;
-console.log(process.env.RECIPE_API_KEY);
-console.log(config.RECIPE_API_KEY);
 const $readyInMinutes = $('.readyInMinutes')
 const $input = $("input[id='search']")
+const $calorieReq = $("input[id='calorie-request']")
 const $videoInput = $("input[id='videoInput']")
 const $select = $("select[id='select']")
-
+const $caloriePlan = $("select[id='calorie-plan']")
 let $td = $(".table")
+let calorieReq = null;
+
 
 $select.change(function () {
     $input.val('');
@@ -14,6 +15,37 @@ $select.change(function () {
 })
 
 
+function popupModal() {
+    let popUpBox = document.getElementById('popUpBox');
+    popUpBox.style.display = "block";
+    document.getElementById('closeModal').innerHTML = '<button onclick="closeModal()" >X</button>';
+}
+
+function generateMealPlan() {
+    calorieReq = $calorieReq.val();
+    document.getElementById('calorie-questions').innerText = 'How many days of meal plans would you like?';
+    document.getElementById('modal-transition').innerHTML = '<button class="modal-transition">Send</button>';
+    document.getElementById('modal-transition').onclick = mealPlanInfo
+    document.getElementById('calorie-request').style.display = "none"
+    document.getElementById('calorie-plan').style.display = "block"
+}
+
+function mealPlanInfo() {
+    caloriePlan = $caloriePlan.val;
+    $.ajax({
+        url: `https://api.spoonacular.com/mealplanner/generate?apiKey=${config.RECIPE_API_KEY}&timeFrame=${caloriePlan}&targetCalories=${calorieReq}`,
+        success: function (res) {
+            document.getElementById("calorie-output").innerHTML = "<div>" + res.text + "</div>"
+            console.log(res)
+        }
+    });
+}
+
+function closeModal() {
+    console.log('click')
+    document.getElementById('popUpBox').style.display = "none";
+    document.getElementById('popUpOverlay').style.display = "none";
+}
 // Generates the API Search for the image and places it inside the output div
 function getrecepe(event) {
 
@@ -32,7 +64,7 @@ function getrecepe(event) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/recipes?search=${userInput}`,
-        url: `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API_KEY}&number=1&query=${userInput}`,
+        url: `https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
         success: function (res) {
 
             let minuteString = mintueCoversation(res.results[0].readyInMinutes)
@@ -42,6 +74,9 @@ function getrecepe(event) {
 
         }
     });
+    
+    getMealData(userInput);
+
 }
 
 
@@ -51,14 +86,14 @@ function getSelection(id) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/selection?search=${foodSelection}`,
-        url: `https://api.spoonacular.com/recipes/search?apiKey=${RECIPE_API_KEY}&number=1&query=${foodSelection}`,
+        url: `https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
         success: function (res) {
 
             let recipeId = res.results[0].id;
 
             $.ajax({
                 // url:`https://project1-629.herokuapp.com/dominique/selection/specific?search=${foodSelection}&id=${recipeId}`,   
-                url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${RECIPE_API_KEY}&query=${foodSelection}`,
+                url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
                 success: function (res) {
 
                     foodData = res;
@@ -91,7 +126,7 @@ function render() {
 function getJokes() {
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/jokes`,
-        url: `https://api.spoonacular.com/food/jokes/random?apiKey=${RECIPE_API_KEY}`,
+        url: `https://api.spoonacular.com/food/jokes/random?apiKey=${config.RECIPE_API_KEY}`,
         success: function (res) {
             document.getElementById("foodJoke").innerHTML = "<div id='generatedJoke'>" + res.text + "</div>"
             console.log(res);
@@ -100,11 +135,10 @@ function getJokes() {
 }
 
 function getVideos() {
-
     videoSearch = $videoInput.val();
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/videos?search=${videoSearch}`,
-        url: `https://api.spoonacular.com/food/videos/search?apiKey=${RECIPE_API_KEY}&query=${videoSearch}`,
+        url: `https://api.spoonacular.com/food/videos/search?apiKey=${config.RECIPE_API_KEY}&query=${videoSearch}`,
         success: function (res) {
             document.getElementById("video").src = `https://www.youtube.com/embed/` + res.videos[0].youTubeId
 
@@ -115,6 +149,15 @@ function getVideos() {
     })
 }
 
+function getMealData(userInput) {
+    $.ajax({
+        url: `https://api.spoonacular.com/mealplanner/generate?apiKey=${config.RECIPE_API_KEY}&timeFrame=day&targetCalories=${4000}`,
+        success: function (res) {
+            document.getElementById("calorie-output").innerHTML = "<div>" + res.text + "</div>"
+            console.log(res)
+        }
+    });
+}
 
 //Generates the original source point with the ID for info.
 function getsource(id) {
@@ -122,7 +165,7 @@ function getsource(id) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/source?search=${id}`,
-        url: `https://api.spoonacular.com/recipes/${id}/information?apiKey=${RECIPE_API_KEY}`,
+        url: `https://api.spoonacular.com/recipes/${id}/information?apiKey=${config.RECIPE_API_KEY}`,
         success: function (res) {
 
             document.getElementById("sourceLink").innerHTML = res.sourceUrl
