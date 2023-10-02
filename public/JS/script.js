@@ -33,7 +33,7 @@ function generateMealPlan() {
 function mealPlanInfo() {
     caloriePlan = $caloriePlan.val;
     $.ajax({
-        url: `https://api.spoonacular.com/mealplanner/generate?apiKey=${config.RECIPE_API_KEY}&timeFrame=${caloriePlan}&targetCalories=${calorieReq}`,
+        url: `https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.RECIPE_API_KEY}&timeFrame=${caloriePlan}&targetCalories=${calorieReq}`,
         success: function (res) {
             document.getElementById("calorie-output").innerHTML = "<div>" + res.text + "</div>"
             console.log(res)
@@ -64,7 +64,7 @@ function getrecepe(event) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/recipes?search=${userInput}`,
-        url: `https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${userInput}`,
+        url: `https://api.spoonacular.com/recipes/search?apiKey=${process.env.RECIPE_API_KEY}&number=1&query=${userInput}`,
         success: function (res) {
 
             let minuteString = mintueCoversation(res.results[0].readyInMinutes)
@@ -86,14 +86,14 @@ function getSelection(id) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/selection?search=${foodSelection}`,
-        url: `https://api.spoonacular.com/recipes/search?apiKey=${config.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
+        url: `https://api.spoonacular.com/recipes/search?apiKey=${process.env.RECIPE_API_KEY}&number=1&query=${foodSelection}`,
         success: function (res) {
 
             let recipeId = res.results[0].id;
 
             $.ajax({
                 // url:`https://project1-629.herokuapp.com/dominique/selection/specific?search=${foodSelection}&id=${recipeId}`,   
-                url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${config.RECIPE_API_KEY}&query=${foodSelection}`,
+                url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${process.env.RECIPE_API_KEY}&query=${foodSelection}`,
                 success: function (res) {
 
                     foodData = res;
@@ -126,7 +126,7 @@ function render() {
 function getJokes() {
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/jokes`,
-        url: `https://api.spoonacular.com/food/jokes/random?apiKey=${config.RECIPE_API_KEY}`,
+        url: `https://api.spoonacular.com/food/jokes/random?apiKey=${process.env.RECIPE_API_KEY}`,
         success: function (res) {
             document.getElementById("foodJoke").innerHTML = "<div id='generatedJoke'>" + res.text + "</div>"
             console.log(res);
@@ -138,7 +138,7 @@ function getVideos() {
     videoSearch = $videoInput.val();
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/videos?search=${videoSearch}`,
-        url: `https://api.spoonacular.com/food/videos/search?apiKey=${config.RECIPE_API_KEY}&query=${videoSearch}`,
+        url: `https://api.spoonacular.com/food/videos/search?apiKey=${process.env.RECIPE_API_KEY}&query=${videoSearch}`,
         success: function (res) {
             document.getElementById("video").src = `https://www.youtube.com/embed/` + res.videos[0].youTubeId
 
@@ -151,7 +151,7 @@ function getVideos() {
 
 function getMealData(userInput) {
     $.ajax({
-        url: `https://api.spoonacular.com/mealplanner/generate?apiKey=${config.RECIPE_API_KEY}&timeFrame=day&targetCalories=${4000}`,
+        url: `https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.RECIPE_API_KEY}&timeFrame=day&targetCalories=${4000}`,
         success: function (res) {
             document.getElementById("calorie-output").innerHTML = "<div>" + res.text + "</div>"
             console.log(res)
@@ -165,7 +165,7 @@ function getsource(id) {
 
     $.ajax({
         //url: `https://project1-629.herokuapp.com/dominique/source?search=${id}`,
-        url: `https://api.spoonacular.com/recipes/${id}/information?apiKey=${config.RECIPE_API_KEY}`,
+        url: `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.RECIPE_API_KEY}`,
         success: function (res) {
 
             document.getElementById("sourceLink").innerHTML = res.sourceUrl
